@@ -9,12 +9,17 @@ File âm thanh như: WAV, AIFF..
 File ném như: zip, docx, mp3...
 
 Ví dụ về file ảnh
+
 <img width="615" height="82" alt="image" src="https://github.com/user-attachments/assets/3e7d46f8-3d34-4d79-8658-cd55c3026a49" />
 Ví dụ về file âm thanh
+
 <img width="624" height="67" alt="image" src="https://github.com/user-attachments/assets/414c8602-7d08-4a18-a2db-f1bb5a3990ba" />
 Ví dụ về file nén
+
 <img width="1337" height="129" alt="image" src="https://github.com/user-attachments/assets/aa95f67d-073e-4bce-9271-c0510cdf0dc2" />
+
 Cấu trúc của PNG:
+
 Gồm magic byte là 8 byte đầu:
 
  89 50 4e 47 0d 0a 1a 0a
