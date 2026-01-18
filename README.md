@@ -79,9 +79,9 @@ cv2.imshow(winname, mat) hiển thị ảnh
 ```
 ví dụ: cv2.imshow('dis1', xam)
 ```
-cv2.imwrite(filename, img, params) dùng chỉnh độ nén
+cv2.imwrite(tên ảnh, img, params) dùng chỉnh độ nén
 ```
-ví dụ: cv2.imwrite('anh_xau.jpg', xam, 
+cv2.imwrite('anhtest.jpg', xam, [cv2.IMWRITE_JPEG_QUALITY, 10])
 ```
 cv2.cvtColor dùng để đổi màu sắc
 ```
@@ -89,7 +89,7 @@ cv2.cvtColor dùng để đổi màu sắc
 ```
 ví dụ: cropped_img = img[100:300, 200:400]
 ```
-cropped_img = img[y_start:y_end, x_start:x_end] dùng để cắt ảnh
+cropped_img = img[y đầu:y cuối, x đầu:x cuối] dùng để cắt ảnh
 ```
 Công dụng trong for:
 
