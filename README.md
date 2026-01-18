@@ -67,27 +67,30 @@ Các code py phổ biến với thư viện Open CV
 
 lệnh cơ bản
 
-đầu tiên khai báo import cv2
-
+đầu tiên khai báo
+```
+import cv2
+```
 cv2.imread(path, flag) đọc ảnh: flag=0: ảnh xám, flag=1: ảnh màu
-
+```
 ví dụ: xam = cv2.imread('anhtest.jpg', 0), thì file anhtest sẽ được đọc là màu xám
-
+```
 cv2.imshow(winname, mat) hiển thị ảnh
-
+```
 ví dụ: cv2.imshow('dis1', xam)
-
+```
 cv2.imwrite(filename, img, params) dùng chỉnh độ nén
-
+```
 ví dụ: cv2.imwrite('anh_xau.jpg', xam, 
-
+```
 cv2.cvtColor dùng để đổi màu sắc
+```
 
-cropped_img = img[y_start:y_end, x_start:x_end] dùng để cắt ảnh
-
+```
 ví dụ: cropped_img = img[100:300, 200:400]
-
-
+```
+cropped_img = img[y_start:y_end, x_start:x_end] dùng để cắt ảnh
+```
 Công dụng trong for:
 
 Nhận biết ảnh sửa chữa nhiều 
