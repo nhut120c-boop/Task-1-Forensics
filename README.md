@@ -26,15 +26,23 @@ Gồm magic byte là 8 byte đầu:
 
  89 50 4e 47 0d 0a 1a 0a
  
- Và các trường:
+ Gồm các chunk, một chunk gồm 4 trường:
 
- Trường Length là 4 byte tiếp : cho biết độ dài của byte
+ Trường Length là 4 byte: cho biết độ dài của byte
 
- 00 00 00 0d
+ vidu: 00 00 00 0d
 
- Trường chunk 
+ Trường chunk type gồm 4 byte: cho biết tên của khối để nhận biết 
 
- 49 48 44 52 
+ ví dụ: 49 48 44 52 dịch ra là IHDR là tiêu đề ảnh
+
+ Trường data gồm 13 byte sau chunk type
+
+ví dụ:  00 00 03 84 00 00 02 58 08 02 00 00 00 đây là nội dung chứa chiều rộng, chiều cao...
+
+Trường CRC gồm 4 byte cuối chunk: dùng để kiểm tra xem dữ liệu của khối có bị lỗi hay không
+
+ví dụL: b5 a7 bf 8c, khi mở ảnh thì máy tính sẽ tính toán lại nếu b5 a7 bf 8c thì đúng
  
 Cách nhận biết file type là:
 Xài lệnh 
@@ -46,6 +54,11 @@ Hoặc nhìn vào các byte đầu của magic byte
  hexdump -C anh1.png | head
 ```
 <img width="790" height="233" alt="image" src="https://github.com/user-attachments/assets/82572c8f-128a-4f11-9393-977244f790d3" />
+
+Tìm hiểu về thư viện Pillow và Open CV
+
+Open CV là 
+
 
 
 
