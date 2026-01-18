@@ -57,7 +57,21 @@ Hoặc nhìn vào các byte đầu của magic byte
 
 Tìm hiểu về thư viện Pillow và Open CV
 
-Open CV là 
+Open CV là 1 thư viện mã nguồn mở gồm hơn 2500 thuật toán cho máy tính có thể nhìn được vật thể,nó gồm 2 mảng chính là image processing và computer vision 
+
+image processing dùng dể cắt ghép ảnh, đổi màu làm mờ.....
+
+computer vision dùng để nhận diện người, đếm xe hay nhận diện trộm...
+
+Công dụng trong for:
+
+Nhận biết ảnh sửa chữa nhiều 
+
+code ví dụ:
+
+Làm rõ ảnh: 
+code ví dụ: 
+
 
 
 
