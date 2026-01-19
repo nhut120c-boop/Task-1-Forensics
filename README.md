@@ -91,6 +91,14 @@ ví dụ: cropped_img = img[100:300, 200:400]
 ```
 cropped_img = img[y đầu:y cuối, x đầu:x cuối] dùng để cắt ảnh
 ```
+Giữ ảnh khi show không bị tắt
+```
+cv2.waitKey(0)
+```
+cv2.destroyAllWindows() để dọn ram
+
+
+
 Công dụng trong for:
 
 Nhận biết ảnh sửa chữa nhiều 
