@@ -85,11 +85,11 @@ cv2.imwrite('anhtest.jpg', xam, [cv2.IMWRITE_JPEG_QUALITY, 10])
 ```
 cv2.cvtColor dùng để đổi màu sắc
 ```
-
+anhmau = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 ví dụ: cropped_img = img[100:300, 200:400]
 ```
-cropped_img = img[y đầu:y cuối, x đầu:x cuối] dùng để cắt ảnh
+catanh = img[y đầu:y cuối, x đầu:x cuối] dùng để cắt ảnh
 ```
 Công dụng trong for:
 
