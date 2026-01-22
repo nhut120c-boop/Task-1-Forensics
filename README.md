@@ -85,18 +85,28 @@ cv2.imwrite('anhtest.jpg', xam, [cv2.IMWRITE_JPEG_QUALITY, 10])
 ```
 cv2.cvtColor dùng để đổi màu sắc
 ```
-
+anh = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 ```
 ví dụ: cropped_img = img[100:300, 200:400]
 ```
 cropped_img = img[y đầu:y cuối, x đầu:x cuối] dùng để cắt ảnh
 ```
+cv2.putText(...): Viết chữ lên ảnh
+
+```
+cv2.putText(img, "zeroD", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+```
+cv2.resize(src, dsize) thay đổi kích thước ảnh
+```
+anh_nho = cv2.resize(img, (200, 200))
+```
+
 Giữ ảnh khi show không bị tắt
 ```
 cv2.waitKey(0)
 ```
 cv2.destroyAllWindows() để dọn ram
-
+Còn các lệnh nữa... (em sẽ tìm hiểu từ từ ạ)
 
 
 Công dụng trong for:
