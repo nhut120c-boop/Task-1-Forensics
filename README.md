@@ -100,6 +100,29 @@ cv2.resize(src, dsize) thay đổi kích thước ảnh
 ```
 anh_nho = cv2.resize(img, (200, 200))
 ```
+khai báo và đọc camera
+```
+cap = cv2.cam(0)
+
+ret, frame = cap.read()
+```
+Khử nhiễu: cv2.GaussianBlur
+```
+ví dụ: blur = cv2.GaussianBlur(img, (5, 5), 0)
+```
+Tìm đường viền của vật thể: cv2.Canny
+```
+vien = cv2.Canny(img, 100, 200)
+```
+Lọc màu: cv2.inRange
+```
+mặt_nạ = cv2.inRange(ảnh_hsv, màu_thấp_nhất, màu_cao_nhất)
+
+```
+lật ảnh: cv2.flip
+```
+flip = cv2.flip(img, 1) # 1: lật ngang, 0: lật dọc, -1: cả hai
+```
 
 Giữ ảnh khi show không bị tắt
 ```
