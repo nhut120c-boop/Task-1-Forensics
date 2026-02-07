@@ -219,9 +219,96 @@ ta được
 
 <img width="624" height="351" alt="image" src="https://github.com/user-attachments/assets/fe66045c-87f2-4d7d-9617-6f09d67406cf" />
 
+Pillow: 
 
+Tìm hiểu Pillow Là thư viện xử lý ảnh tĩnh, thế mạnh là trích xuất metadata và can thiệp sâu vào pixel mà không cần mảng phức tạp.
 
+Các code py phổ biến với thư viện Pillow
 
+Lệnh cơ bản đầu tiên khai báo: from PIL import Image
+
+Image.open(path): Mở ảnh
+
+ví dụ: 
+```
+img = Image.open('evidence.jpg')
+```
+img.show(): Hiển thị ảnh 
+
+img.save(tên_mới): Lưu ảnh
+
+ví dụ: 
+```
+img.save('output.png')
+```
+
+img.convert(mode): Chuyển đổi hệ màu (RGB, L, CMYK...)
+
+ví dụ: 
+```
+anh_xam = img.convert('L')
+```
+
+img.crop((left, top, right, bottom)): Cắt ảnh bằng tuple 
+
+ví dụ: 
+```
+vung_cat = img.crop((0, 0, 100, 100))
+```
+
+img.resize((width, height)): Thay đổi kích thước
+
+ví dụ: 
+```
+nho = img.resize((50, 50))
+```
+
+img.rotate(angle): Xoay ảnh
+
+ví dụ: 
+```
+xoay = img.rotate(90)
+```
+img.getpixel((x, y)): Lấy giá trị màu tại 1 pixel 
+
+ví dụ:
+```
+r, g, b = img.getpixel((10, 10))
+```
+img.putpixel((x, y), (r, g, b)): Thay đổi màu của 1 pixel
+
+ví dụ:
+```
+img.putpixel((10, 10), (255, 0, 0))
+```
+Công dụng trong Forensics:
+
+Trích xuất Metadata (EXIF): Dùng để tìm tọa độ GPS, ngày giờ chụp, loại thiết bị....em thấy như exiftool
+code ví dụ:
+```
+from PIL import Image
+from PIL.ExifTags import TAGS
+img = Image.open('bi_mat.jpg')
+exif = img._getexif()
+for tag_id, value in exif.items():
+    tag_name = TAGS.get(tag_id, tag_id)
+    print(f"{tag_name}: {value}")
+```
+soi từng lớp bit: Dùng Pillow để truy cập từng pixel và lọc bit tương tự như OpenCV nhưng theo cách quản lý đối tượng ảnh. 
+Code ví dụ (Vắt bit cuối kênh Red):
+```
+from PIL import Image
+img = Image.open('anhtest.png').convert('RGB')
+pixels = img.load()
+width, height = img.size
+out = Image.new('L', (width, height))
+out_pix = out.load()
+for y in range(height):
+    for x in range(width):
+        r, g, b = pixels[x, y]
+        out_pix[x, y] = (r & 1) * 255
+out.save('res_pil.png')
+```
 
 
 
