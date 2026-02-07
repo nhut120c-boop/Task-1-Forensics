@@ -198,6 +198,28 @@ cv2.imshow('Cropped', crop_img)
 cv2.imshow('Gray Scale', gray_img)
 cv2.waitKey(0)
 ```
+VÍ DỤ:
+tạo 1 file png có nền đen và chữ KMA có màu GRB là 1,0,0:
+
+<img width="1152" height="648" alt="anhtesst" src="https://github.com/user-attachments/assets/d09cd0c1-085a-4f6e-95ac-30ace9ba79f0" />
+
+đưa ảnh vô máy ảo để bắt đầu lọc, đầu tiên tạo file soi.py
+
+<img width="373" height="66" alt="image" src="https://github.com/user-attachments/assets/8b1a67dc-aa0d-4565-af97-ac0e3bb7915c" />
+
+xong viết script để lọc màu:
+
+<img width="533" height="137" alt="image" src="https://github.com/user-attachments/assets/a14a91ed-95ee-4415-9c87-da9d0bae9522" />
+
+script để lọc bit cuối kênh red rồi phóng đại tương phản để làm hiện chữ ẩn, sau đó chạy py
+
+<img width="405" height="64" alt="image" src="https://github.com/user-attachments/assets/c343c75f-c0eb-4fbc-8b6d-44775c362146" />
+
+ta được
+
+<img width="624" height="351" alt="image" src="https://github.com/user-attachments/assets/fe66045c-87f2-4d7d-9617-6f09d67406cf" />
+
+
 
 
 
