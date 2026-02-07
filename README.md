@@ -137,14 +137,67 @@ Công dụng trong for:
 Nhận biết ảnh sửa chữa nhiều 
 
 code ví dụ:
+```
+import cv2
+import matplotlib.pyplot as plt
 
+# Đọc ảnh
+img = cv2.imread('evidence.jpg')
+
+# Tính toán Histogram cho 3 kênh màu (BGR)
+colors = ('b', 'g', 'r')
+for i, col in enumerate(colors):
+    hist = cv2.calcHist([img], [i], None, [256], [0, 256])
+    plt.plot(hist, color=col)
+    plt.xlim([0, 256])
+
+plt.title('Biểu đồ Histogram - Kiểm tra mức độ phân bổ pixel')
+plt.show()
+```
 Làm rõ ảnh: 
-
 code ví dụ: 
+```
+import cv2
+import numpy as np
+
+img = cv2.imread('dark_evidence.jpg', 0) # Đọc ảnh hệ xám (grayscale)
+
+# Cân bằng histogram để làm rõ chi tiết trong vùng tối
+equ = cv2.equalizeHist(img)
+
+# Hoặc dùng bộ lọc làm sắc nét (Kernel)
+kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+sharpened = cv2.filter2D(img, -1, kernel)
+
+cv2.imshow('Original', img)
+cv2.imshow('Enhanced', equ)
+cv2.waitKey(0)
+```
 
 Cắt ảnh, đổi màu ảnh:
-
 code ví dụ: 
+```
+import cv2
+
+img = cv2.imread('secret.png')
+# 1. Cắt ảnh (Slicing mảng NumPy)
+# Cú pháp: img[y_start:y_end, x_start:x_end]
+crop_img = img[100:400, 200:500] 
+
+# 2. Đổi màu ảnh (Color Space Conversion)
+# Đổi sang Grayscale để dễ nhận diện biên (Edges)
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Đổi sang HSV để lọc các màu sắc cụ thể (ví dụ lọc màu đỏ)
+hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+# Lưu lại ảnh đã xử lý
+cv2.imwrite('cropped_evidence.png', crop_img)
+
+cv2.imshow('Cropped', crop_img)
+cv2.imshow('Gray Scale', gray_img)
+cv2.waitKey(0)
+```
 
 
 
