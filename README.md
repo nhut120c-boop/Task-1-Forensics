@@ -326,6 +326,60 @@ rồi past vào gg map ta có được tọa độ:
 
 <img width="1902" height="1017" alt="image" src="https://github.com/user-attachments/assets/a0448d26-42bd-410e-b774-8db77fcc0f8f" />
 
+Hex Editor
+
+dùng để xem và chỉnh sửa dữ liệu thô của file,để kiểm tra magic byte, sửa lỗi file, hoặc tìm các chuỗi text ẩn.
+
+Lệnh: xxd, hexedit
+
+vidu file anh.png không mở được do bị chỉnh sửa header.
+
+<img width="1481" height="821" alt="image" src="https://github.com/user-attachments/assets/5081d382-f988-45f3-98c5-34f20928276b" />
+
+kiểm tra bằng hexedit 
+
+<img width="244" height="47" alt="image" src="https://github.com/user-attachments/assets/1d53dcb4-2b66-46a8-8544-560c05d4b19a" />
+
+thấy magic byte bị lỗi 
+
+<img width="1906" height="900" alt="image" src="https://github.com/user-attachments/assets/74133b0c-2e9b-4e26-b4d9-7625c1230b94" />
+
+chỉnh lại cho đúng dạng 2 byte đầu thành FF ta được
+
+<img width="1627" height="870" alt="image" src="https://github.com/user-attachments/assets/db17ca63-6c90-4eb6-a9b5-d75390e36182" />
+
+Binwalk
+
+trích xuất các file ẩn nằm lồng bên trong một file gốc
+
+Lệnh: binwalk file_can_trich
+
+vídu
+
+<img width="1142" height="216" alt="image" src="https://github.com/user-attachments/assets/f3b6a409-9869-4599-b090-fec60122fba4" />
+
+sau đó ls 
+
+<img width="580" height="260" alt="image" src="https://github.com/user-attachments/assets/6da18c57-65de-42b5-816d-ab79f671422a" />
+
+cd vào thư mục _image.jpg.extracted 
+
+<img width="468" height="182" alt="image" src="https://github.com/user-attachments/assets/779aaf76-6734-47c3-8003-1e0c858748af" />
+
+ta thấy file flag.txt
+
+<img width="425" height="115" alt="image" src="https://github.com/user-attachments/assets/d4cb9ee6-7299-41a4-9607-3a70d4f77ae4" />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
