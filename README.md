@@ -309,6 +309,25 @@ for y in range(height):
         out_pix[x, y] = (r & 1) * 255
 out.save('res_pil.png')
 ```
+VÍ DỤ THỰC TẾ:
+Để tim vị trí của một bức ảnh bằng thư viện pillow
+
+đầu tiên:
+<img width="253" height="42" alt="image" src="https://github.com/user-attachments/assets/6bf375bc-e02a-44b5-a71c-dad174b4d1bf" />
+
+viết script 
+
+<img width="784" height="113" alt="image" src="https://github.com/user-attachments/assets/a7aab579-b378-4773-8706-d082398ac823" />
+
+sau đó 
+<img width="325" height="61" alt="image" src="https://github.com/user-attachments/assets/122b7726-2a3d-431b-8eba-100e5acc6ec6" />
+
+rồi past vào gg map ta có được tọa độ:
+
+<img width="1902" height="1017" alt="image" src="https://github.com/user-attachments/assets/a0448d26-42bd-410e-b774-8db77fcc0f8f" />
+
+
+
 
 
 
