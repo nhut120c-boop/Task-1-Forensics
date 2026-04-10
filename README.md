@@ -585,18 +585,107 @@ zsteg là công cụ dò tìm và trích xuất dữ liệu ẩn trong các bit 
 
 <img width="1920" height="923" alt="Screenshot_2026-04-10_10_49_03" src="https://github.com/user-attachments/assets/7edc6276-82c8-470e-8f3a-07c67e4e3a25" />
 
+ tìm hiểu về các loại mã hóa:
 
+ 
+AES: là mật mã dùng chung 1 khóa để khóa và mở, nhanh và trâu chuyên dùng để giấu file hay dữ liệu lớn
 
+RSA: Là mật mã dùng cặp khóa public để khóa và private để mở, hơi chậm nên chỉ dùng để gửi mật khẩu hoặc ký tên
 
+Base16 (Hex): là mã hóa dữ liệu thành các cặp ký tự chỉ gồm số 0-9 và chữ A-F như 4a 6b 20
 
+Base64: Là mã hóa biến dữ liệu thành chuỗi ký tự A-Z, a-z, 0-9, +, / và hay có dấu = ở cuối như S0NTQ3t...=
 
+Base85: Là mã hóa dùng nhiều ký tự lạ hơn cả base64 để nén dữ liệu cho gọn, nhìn cực kỳ loạn mắt nhhư <+U92H..
 
+bài 1 chuyển từ file ảnh sang file text chứa pixel 
+```
+from PIL import Image
+def chuyenanh(anh, text):
+    anhgoc = Image.open(anh).convert('RGB')
+    rong,cao = anhgoc.size
+    px = anhgoc.load()
+    with open(text, 'w') as textt:
+        textt.write(f"{rong},{cao}")
+        for y in range(cao):
+            for x in range(rong):
+                do, xanhla,xanhduong = px[x,y]
+                textt.write(f"{do},{xanhla},{xanhduong}")
+chuyenanh('in.jpg', 'outt.txt')
+```
+ngược lại
+```
+from PIL import Image
+def chuyenchu(text, anh):
+    with open(text, 'r') as text1:
+        dong = text1.readlines()
+    rong, cao = map(int, dong[0].strip().split(','))
+    anhmoi = Image.new('RGB', (rong, cao))
+    px = anhmoi.load()
+    i = 1
+    for y in range(cao):
+        for x in range(rong):
+            do, xanhla, xanhduong = map(int, dong[i].strip().split(','))
+            px[x, y] = (do, xanhla, xanhduong)
+            i += 1
+    anhmoi.save(anh)
+chuyenchu('out.txt', 'out_anh.jpg')
+```
+bài 2 giấu text vào file
+```
+from PIL import Image
+def giautin(anh, ndung, out):
+    anhgoc = Image.open(anh).convert('RGB')
+    rong, cao = anhgoc.size
+    px = anhgoc.load()
+    ndung += "stopppp"
+    bit = ''.join([format(ord(i), '08b') for i in ndung]) 
+    idx = 0
+    dai = len(bit)
+    for y in range(cao):
+        for x in range(rong):
+            if idx < dai:
+                do, xanhla, xanhduong = px[x, y]
+                if idx < dai:
+                    do = (do & ~1) | int(bit[idx])
+                    idx += 1
+                if idx < dai:
+                    xanhla = (xanhla & ~1) | int(bit[idx])
+                    idx += 1
+                if idx < dai:
+                    xanhduong = (xanhduong & ~1) | int(bit[idx])
+                    idx += 1
+                px[x, y] = (do, xanhla, xanhduong)
+            else:
+                break
+    anhgoc.save(out, "PNG")
 
+```
 
-
-
-
-
+đọc nd trong ảnh
+```
+from PIL import Image
+def doctin(anh, text):
+    anhbi = Image.open(anh).convert('RGB')
+    rong, cao = anhbi.size
+    px = anhbi.load()
+    bit = ""
+    for y in range(cao):
+        for x in range(rong):
+            do, xanhla, xanhduong = px[x, y]
+            bit += str(do & 1)
+            bit += str(xanhla & 1)
+            bit += str(xanhduong & 1)
+    chuoi = ""
+    for i in range(0, len(bit), 8):
+        byte = bit[i:i+8]
+        if len(byte) < 8: break
+        chuoi += chr(int(byte, 2))
+    if "#####" in chuoi:
+        that = chuoi.split("#####")[0]
+        with open(text, 'w') as f:
+            f.write(that)
+```
 
 
 
