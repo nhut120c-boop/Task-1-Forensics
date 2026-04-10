@@ -370,6 +370,176 @@ ta thấy file flag.txt
 
 <img width="425" height="115" alt="image" src="https://github.com/user-attachments/assets/d4cb9ee6-7299-41a4-9607-3a70d4f77ae4" />
 
+tìm hiểu về stephide: là công cụ file trong ảnh như .jpg, .bmp, .wav, .au, 
+
+ví dụ: 
+
+ta có ảnh 1 là anh1.jpg và 1 file là flag.txt 
+
+ta dùng lệnh sau để giấu 
+
+```
+steghide embed -ef flag.txt -cf anh1.jpeg
+```
+
+<img width="396" height="167" alt="image" src="https://github.com/user-attachments/assets/03223524-d0fa-41c7-9db1-d919b7e10572" />
+
+và dùng lệnh
+
+```
+steghide extract -sf anh1.jpeg
+```
+
+<img width="488" height="142" alt="image" src="https://github.com/user-attachments/assets/c32a1a65-aa04-4d8e-bd92-8b0c3cbebcb3" />
+
+
+về Stegsolve: giúp xem các lớp màu khác nhau, so sánh hai ảnh XOR, ADD, SUB.
+
+<img width="620" height="352" alt="image" src="https://github.com/user-attachments/assets/f23f8513-2a83-4eec-809c-1dfec1b75979" />
+
+<img width="259" height="339" alt="image" src="https://github.com/user-attachments/assets/8f8c9fea-34f1-4727-9c18-601cae0b4ac0" />
+
+<img width="243" height="337" alt="image" src="https://github.com/user-attachments/assets/312b66f8-c919-44f3-8425-d98ae1bf028b" />
+
+<img width="267" height="351" alt="image" src="https://github.com/user-attachments/assets/90309726-84bf-4342-ae73-9605755a1c41" />
+
+và nhiều lớp ảnh khác nữa...
+
+tiếp theo là foremost: tách các file bị ẩn hoặc bị gộp bên trong một file khác dựa trên header/footer.
+
+<img width="324" height="86" alt="image" src="https://github.com/user-attachments/assets/e5507260-bb4a-4c2c-bfb5-aa1473424480" />
+
+<img width="765" height="102" alt="image" src="https://github.com/user-attachments/assets/8f3fbae6-77e9-4b75-9fb4-0b4126d3d670" />
+
+<img width="367" height="122" alt="image" src="https://github.com/user-attachments/assets/e6dd4a1a-d4f7-48a4-ab88-0ff17e4cb404" />
+
+tiếp theo là ImageMagick dùng để chuyển đổi định dạng ảnh, xác định thông số sai lệch ảnh
+
+dùng lệnh này để xem dữ liệu ảnh
+
+<img width="340" height="63" alt="image" src="https://github.com/user-attachments/assets/e9248bac-7957-41f4-9688-9f38cbc31340" />
+
+có output là
+
+```
+Image:
+  Filename: anh1.jpeg
+  Permissions: rw-rw-r--
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Mime type: image/jpeg
+  Class: DirectClass
+  Geometry: 225x225+0+0
+  Units: Undefined
+  Colorspace: sRGB
+  Type: TrueColor
+  Base type: Undefined
+  Endianness: Undefined
+  Depth: 8-bit
+  Channels: 3.0
+  Channel depth:
+    Red: 8-bit
+    Green: 8-bit
+    Blue: 8-bit
+  Channel statistics:
+    Pixels: 50625
+    Red:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 172.747 (0.677438)
+      median: 184 (0.721569)
+      standard deviation: 43.1777 (0.169324)
+      kurtosis: -0.0156261
+      skewness: -0.716078
+      entropy: 0.901378
+    Green:
+      min: 0  (0)
+      max: 247 (0.968627)
+      mean: 148.16 (0.58102)
+      median: 162 (0.635294)
+      standard deviation: 52.0588 (0.204152)
+      kurtosis: -0.856686
+      skewness: -0.50109
+      entropy: 0.939082
+    Blue:
+      min: 0  (0)
+      max: 233 (0.913725)
+      mean: 124.737 (0.489165)
+      median: 136 (0.533333)
+      standard deviation: 62.1773 (0.243833)
+      kurtosis: -1.28635
+      skewness: -0.313784
+      entropy: 0.970476
+  Image statistics:
+    Overall:
+      min: 0  (0)
+      max: 255 (1)
+      mean: 148.548 (0.582541)
+      median: 160.667 (0.630065)
+      standard deviation: 52.4713 (0.20577)
+      kurtosis: -0.719554
+      skewness: -0.510317
+      entropy: 0.936979
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33,0.03)
+    green primary: (0.3,0.6,0.1)
+    blue primary: (0.15,0.06,0.79)
+    white point: (0.3127,0.329,0.3583)
+  Matte color: grey74
+  Background color: white
+  Border color: srgb(223,223,223)
+  Transparent color: black
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 225x225+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  Quality: 75
+  Orientation: Undefined
+  Properties:
+    date:create: 2026-04-10T12:54:00+00:00
+    date:modify: 2026-04-10T12:54:00+00:00
+    date:timestamp: 2026-04-10T13:08:57+00:00
+    jpeg:colorspace: 2
+    jpeg:sampling-factor: 2x2,1x1,1x1
+    signature: 83c8828b00d3686e6b52e4df52e8e9b66d75946b4b7afbcb70f3f60986f1e4b8
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 5764B
+  Number pixels: 50625
+  Pixel cache type: Memory
+  Pixels per second: 57.6575MP
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 7.1.2-15 Q16 x86_64 23686 https://imagemagick.org
+```
+và tìm điểm khác biệt, ta có 2 ảnh y như nhauu là anh1 và ảnh 2
+
+<img width="419" height="302" alt="image" src="https://github.com/user-attachments/assets/bade76a8-6d8a-4b16-8974-796044555a62" />
+
+ta dùng lệnh compare để xem 2 ảnh có gì khác ko
+
+<img width="405" height="125" alt="image" src="https://github.com/user-attachments/assets/e239c5de-0db4-4de8-a070-398a12f607ed" />
+
+và có output, có nhiều điểm đỏ cho thấy 2 ảnh ko giống nhau 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
