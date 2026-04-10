@@ -603,15 +603,14 @@ bài 1 chuyển từ file ảnh sang file text chứa pixel
 from PIL import Image
 def chuyenanh(anh, text):
     anhgoc = Image.open(anh).convert('RGB')
-    rong,cao = anhgoc.size
+    rong, cao = anhgoc.size
     px = anhgoc.load()
     with open(text, 'w') as textt:
-        textt.write(f"{rong},{cao}")
+        textt.write(f"{rong},{cao}\n")
         for y in range(cao):
             for x in range(rong):
-                do, xanhla,xanhduong = px[x,y]
-                textt.write(f"{do},{xanhla},{xanhduong}")
-chuyenanh('in.jpg', 'outt.txt')
+                do, xanhla, xanhduong = px[x,y]
+                textt.write(f"{do},{xanhla},{xanhduong}\n")
 ```
 ngược lại
 ```
@@ -629,7 +628,6 @@ def chuyenchu(text, anh):
             px[x, y] = (do, xanhla, xanhduong)
             i += 1
     anhmoi.save(anh)
-chuyenchu('out.txt', 'out_anh.jpg')
 ```
 bài 2 giấu text vào file
 ```
@@ -681,8 +679,8 @@ def doctin(anh, text):
         byte = bit[i:i+8]
         if len(byte) < 8: break
         chuoi += chr(int(byte, 2))
-    if "#####" in chuoi:
-        that = chuoi.split("#####")[0]
+    if "stoppp" in chuoi:
+        that = chuoi.split("stoppp")[0]
         with open(text, 'w') as f:
             f.write(that)
 ```
