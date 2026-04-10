@@ -554,7 +554,8 @@ công cụ Sonic Visualiser: là công cụ để xem phổ âm và tìm thông 
 
   đầu tiên tạo 1 file âm thanh từ 1 ảnh 
 
-  <img width="507" height="145" alt="image" src="https://github.com/user-attachments/assets/51a6b9b4-87ad-4277-8724-7123115c5f07" />
+ <img width="434" height="74" alt="image" src="https://github.com/user-attachments/assets/388253e4-c033-425b-9ae6-a509b7de309d" />
+
 
   sau đó dùng 
   ```
@@ -565,6 +566,24 @@ qsstv
 
 để mở lên 
 
+và mở 1 tab terminal mới chạy lệnh 
+
+<img width="373" height="102" alt="image" src="https://github.com/user-attachments/assets/ee1a9b50-9e03-4054-a6e7-ca467d4e99d1" />
+
+để phát âm thanh
+
+và quay lại qsstv 
+
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2dfd759f-e7d4-4f9b-b8fa-2469c66082b2" />
+
+qsstv sẽ vẽ ra ảnh ẩn đã đc giấu trong ảnh
+
+zsteg là công cụ dò tìm và trích xuất dữ liệu ẩn trong các bit thấp nhất của file ảnh, nó thử được tất cả các tổ hợp RGB, BGR, theo hàng, theo cột...
+
+đây là 1 ví dụ tìm flag trong ảnh
+
+
+<img width="1920" height="923" alt="Screenshot_2026-04-10_10_49_03" src="https://github.com/user-attachments/assets/7edc6276-82c8-470e-8f3a-07c67e4e3a25" />
 
 
 
