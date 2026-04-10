@@ -525,9 +525,45 @@ ta dùng lệnh compare để xem 2 ảnh có gì khác ko
 
 <img width="405" height="125" alt="image" src="https://github.com/user-attachments/assets/e239c5de-0db4-4de8-a070-398a12f607ed" />
 
+
 và có output, có nhiều điểm đỏ cho thấy 2 ảnh ko giống nhau 
 
 
+<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/053217af-668e-4847-8fc7-02efb179587f" />
+
+
+công cụ Sonic Visualiser: là công cụ để xem phổ âm và tìm thông điệp ẩn trong file âm thanh
+
+
+<img width="491" height="161" alt="image" src="https://github.com/user-attachments/assets/5e3975f7-9cc8-49e5-a329-d83ef2ce75c1" />
+
+
+<img width="1034" height="688" alt="image" src="https://github.com/user-attachments/assets/e301e0e3-0fc0-4575-9630-79f8ebfbce06" />
+
+ chọn 
+
+ <img width="400" height="33" alt="image" src="https://github.com/user-attachments/assets/60218318-02b6-4987-af90-e9387e875a97" />
+
+ nó hiện lên phổ âm 
+
+ <img width="1107" height="857" alt="image" src="https://github.com/user-attachments/assets/cd6500d0-1462-4b07-88fa-d4d9e2839c1c" />
+
+  thấy dc chữ kcsc mà em cố tình giấu
+
+  SSTV - Slow Scan TV: giải mã hình ảnh được truyền tải qua tín hiệu radio/âm thanh
+
+  đầu tiên tạo 1 file âm thanh từ 1 ảnh 
+
+  <img width="507" height="145" alt="image" src="https://github.com/user-attachments/assets/51a6b9b4-87ad-4277-8724-7123115c5f07" />
+
+  sau đó dùng 
+  ```
+qsstv
+```
+
+  <img width="807" height="680" alt="image" src="https://github.com/user-attachments/assets/01ee1f34-5bb8-47e8-8858-0db6fb93ffda" />
+
+để mở lên 
 
 
 
